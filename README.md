@@ -20,7 +20,7 @@ Seungryong Kim<sup>&dagger;1</sup>.
 <sup>&#8727;</sup> Equal contribution ,<sup>&dagger;</sup>Co-corresponding author
 <br>
 <sup>1</sup>Korea University, <sup>2</sup>VIVE STUDIO  
-[paper]() | [project page](https://github.com/KU-CVLAB/MoDiTalker)
+[paper]() | [project page](https://ku-cvlab.github.io/MoDiTalker/)
 
 
 ## 1. Environment setup
