@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MoDiTalker: Appearance Matching Self-Attention
+        for Semantically-Consistent Text-to-Image Personalization">
+  <meta name="keywords" content="Diffusion, Matching">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoDiTalker: Motion-Disentangled Diffusion
+    Model for High-Fidelity Talking Head Generation</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title">MoDiTalker: Motion-Disentangled Diffusion
+              Model for High-Fidelity Talking Head Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="">Seyeon Kim<sup>*1</sup></a>,</span>
+              <span class="author-block">
+                Siyoon Jin<sup>*1</sup></a>,</span>
+              <span class="author-block">
+              </span>
+              <a href="">Jihye Park<sup>*1</sup></a>,</span>
+              <br>
+              <span class="author-block">
+                Kihong Kim<sup>2</sup></a>,
+              </span>
+              <span class="author-block">
+                Jiyoung Kim<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                Jisu Nam<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://cvlab.korea.ac.kr/members/faculty">Seungryong Kim<sup>&dagger;1</sup></a>,
+              </span>
+              <br>
+
+
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution, <sup>&dagger;</sup>Corresponding author</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Korea University, <sup>2</sup>VIVE STUDIOS</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2402.09812" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/KU-CVLAB/MoDiTalker"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              
+              <img width="100%" src="static/images/1_th_teaser.png"> <br>
+              <div style="display: flex; justify-content: center; text-align: center; margin-bottom: 5px;">
+
+                <div class="content has-text-justified">
+                  <p style="font-size: 15px;">
+                    We present the <strong>Mo</strong>tion-<strong>Di</strong>sentangled diffusion model for
+                    high-fidelity <strong>Talk</strong>ing head gen<strong>er</strong>ation, dubbed
+                    <strong>MoDiTalker</strong>. This framework generates high-quality talking head videos through a
+                    novel two-stage, motion-disentangled diffusion models.
+                  </p>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                  <p style="font-size: 15px;">
+                    Conventional generative adversarial networks (GANs)-based models for talking head generation often
+                    exhibit a limited quality and an unstable training. Recent approaches based on diffusion models
+                    address these limitations and improve the fidelity, but they still encounter challenges including
+                    extensive sampling time and the difficulty of maintaining temporal consistency due to high
+                    stochasticity of diffusion model. To overcome these challenges, we propose a novel
+                    motion-disentangled diffusion model for high-quality talking head generation, dubbed
+                    <strong>MoDiTalker</strong>. We introduce the two modules: audio-to-motion (AToM), designed to
+                    generate a synchronized lip motion from audio, and motion-to-video (MToV), designed to produce
+                    high-quality video clips corresponding to generated motion.
+                    AToM excels in capturing the subtle movements of lip motion, avoiding mode collapse with its high
+                    stochasticity derived from diffusion models. In addition, MToV improves the temporal consistency by
+                    utilizing the efficient tri-plane representation. Our experiments conducted on the standard
+                    benchmark demonstrate that our model achieves superior performance that surpasses the existing
+                    models. We also provide extensive ablation studies and user study results. Our code will be made
+                    publicly available.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br>
+            
+            <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">Overall Framework</h2>
+                  <img width="100%" src="static/images/overall_figure.png"> <br>
+                  <div style="display: flex; justify-content: center; text-align: center; margin-bottom: 5px;">
+
+                    <div class="content has-text-justified">
+                      <p style="font-size: 15px;">
+                        <strong>Overall network architecture of MoDiTalker.</strong> Our framework consists of two
+                        distinct diffusion models: Audio-to-Motion (AToM) and Motion-to-Video (MToV). AToM aims to
+                        generate lip-synchronized facial landmarks, given an identity frame and audio input, as
+                        conditions. MToV generates high-fidelity talking head videos using synthesized facial landmarks
+                        from AToM, identity frames, and pose frames as conditions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              
+              <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                    <h2 class="title is-3">Audio-To-Motion (AToM)</h2>
+                    <!-- First Image and Caption -->
+                    <img width="100%" src="static/images/3_AToM.png">
+                    <div class="content has-text-justified" style="margin-top: 5px;">
+                      <p style="font-size: 15px;">
+                        <strong>Overview of the Audio-to-Motion (AToM) diffusion model</strong>: (a) AToM is a
+                        transformer-based diffusion model that learns the residual between the initial landmark and the
+                        landmark sequence, using the audio embedding and the initial landmark embedding as conditions. In
+                        addition, (b) we design AToM block to process lip-related (upper-half) and lip-unrelated
+                        (lower-half) landmarks separately, allowing the model to focus more on generating lip-related
+                        movements while preserving the facial shape of the speaker.
+                      </p>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+            <br>
+
+              <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                    <h2 class="title is-3">Talking Head Generation Results</h2>
+                    <div class="content has-text-justified">
+                      <p style="font-size: 15px;">
+                        <strong>Self-reconstruction results of MoDiTalker</strong>
+                        Results of MoDiTalker in self-reconstruction setting, in which there exists the reference video.
+                        <div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/self_recon/RD_Radio31_000_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/self_recon/RD_Radio14_000_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video  controls width="200">
+                              <source src="static/videos/self_recon/RD_Radio25_000_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                        </div>
+                        
+                        </p>
+                    </div>
+                    <br>
+                    <div style="clear:both;"></div>
+                    <div class="content has-text-justified">
+                      <p style="font-size: 15px;">
+                        <strong>One-shot setting results of MoDiTalker</strong>
+                        Results of the MoDiTalker in one-shot setting, in which the reference image is only the first frame of the video.
+                        <div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/one-shot/RD_Radio13_000_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/one-shot/WRA_JebHensarling2_003_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video  controls width="200">
+                              <source src="static/videos/one-shot/WDA_MartinHeinrich_000_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                        </div>
+                        
+                        </p>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <br>
+                    <div class="content has-text-justified">
+                      <p style="font-size: 15px;">
+                        <strong>Cross-id results of MoDiTalker</strong>
+                        Results of MoDiTalker in cross-id setting, in which the identity of audio and reference frames are different. Those results are generated for the same audio, with different identity.
+                        <div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/cross-id/MoDiTalker_RD_Radio29_000_audio_audio_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/cross-id/MoDiTalker_RD_Radio50_000_audio_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/cross-id/MoDiTalker_WDA_AmyKlobuchar1_002_audio_audio.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                        </div>
+                        
+                        </p>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <br>
+                    <div class="content has-text-justified">
+                      <p style="font-size: 15px;">
+                        <strong>Out-of-Distribution results of MoDiTalker</strong>
+                        Results of MoDiTalker in cross-id setting, in which the audio is actually a song. The left video is the result of the first stage, AToM, and the right video is the final result of MoDiTalker.
+                        <div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/ood/OOD_motion.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          <div style="float:left; width: 33%;">
+                            <video controls width="200">
+                              <source src="static/videos/ood/OOD_oneshot.mp4" type="video/mp4" />
+                            </video>
+                          </div>
+                          
+                         
+                        </div>
+                        
+                        </p>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <br>
+                    
+
+                   
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      </p>
+    </div>
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{nam2024MoDiTalker,
+      title={MoDiTalker: Motion-Disentangled Diffusion 001 002 Model for High-Fidelity Talking Head Generation}, 
+      author={Jisu Nam and Heesu Kim and DongJae Lee and Siyoon Jin and Seungryong Kim and Seunggyu Chang},
+      year={2024},
+      eprint={2402.09812},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+} -->
+</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/list/cs/new">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/KU-CVLAB/MoDiTalker" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://ku-cvlab.github.io/MoDiTalker/">source code</a> of
+              this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
