@@ -17,7 +17,7 @@ Jiyoung Kim<sup>1</sup>,
 Jisu Nam<sup>1</sup> and
 Seungryong Kim<sup>&dagger;1</sup>.
 <br>
-<sup>&#8727;</sup> Equal contribution ,<sup>&dagger;</sup>Co-corresponding author
+<sup>&#8727;</sup> Equal contribution ,<sup>&dagger;</sup>Corresponding author
 <br>
 <sup>1</sup>Korea University, <sup>2</sup>VIVE STUDIO  
 [paper]() | [project page](https://ku-cvlab.github.io/MoDiTalker/)
