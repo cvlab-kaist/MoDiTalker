@@ -1,0 +1,4 @@
+[2024-03-27 17:24:13.522217] Namespace(amp=True, batch_size=1, data='HDTF', ddconfig={'double_z': False, 'channels': 384, 'resolution': 256, 'timesteps': 16, 'skip': 1, 'in_channels': 3, 'out_ch': 3, 'num_res_blocks': 2, 'attn_resolutions': [], 'splits': 1}, diffusion_config='configs/latent-diffusion/ucf101-ldm-kl-3_res128.yaml', ds=4, embed_dim=4, exp='first_stage_ldmk', first_model='../checkpoints/autoencoder_rgb.pth', first_model_ldmk='', first_stage_folder='', id='encoder_decoder_frz', log_dir='./runs', lossconfig={'params': {'disc_start': 100000000}}, lr=0.0001, n_gpus=1, pretrain_config='configs/autoencoder/base.yaml', res=256, resume=True, scale_lr=False, second_model='', seed=42, skip=1, timesteps=16, train_id_txt=None, typetype='ldmk')
+[2024-03-27 17:24:13.522394] Log path: ./runs/MToV/first_stage_ldmk_encoder_decoder_frz_HDTF_42
+[2024-03-27 17:24:13.522409] Loading dataset HDTF with resolution 256
+[2024-03-27 17:24:47.662999] Generating model
