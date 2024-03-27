@@ -1,0 +1,16 @@
+losses/vgg.pth
+aux_models/
+demo/
+data/
+__pycache__/
+eval_results/
+eval_results_kptEmb/
+eval_results_wo_ldmk/
+eval_results_wo_ldmk_gt/
+*.pth
+*.pt
+*.jpg
+*.png
+*.pkl
+*.npy
+eval_videos/
