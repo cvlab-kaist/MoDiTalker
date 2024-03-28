@@ -1,0 +1,13 @@
+__pycache__/
+results/
+*.gif
+*.mp4
+*.pkl
+*.pt
+*.pth
+*.npy
+*.zip
+BFM/
+BFM copy/
+inference/
+train/
