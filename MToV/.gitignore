@@ -1,0 +1,14 @@
+losses/vgg.pth
+aux_models/
+demo/
+data/
+__pycache__/
+results/
+runs/
+*.pth
+*.pt
+*.jpg
+*.png
+*.pkl
+*.npy
+eval_videos/
