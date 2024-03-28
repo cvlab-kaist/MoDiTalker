@@ -42,7 +42,8 @@ Please refer and follow the dataset preparation from [here](https://github.com/K
 
 ### 2.2. Download auxiliary models
 <!-- Download  [this link](https://drive.google.com/file/d/1d08qauPUH0Nu_yN2gcmreLSiOiweD5OE/view?usp=sharing) -->
-Get the [`BFM_model_front.mat`](https://drive.google.com/file/d/1d08qauPUH0Nu_yN2gcmreLSiOiweD5OE/view?usp=sharing) and [`similarity_Lm3D_all.mat`](https://drive.google.com/file/d/17zp_zuUYAuieCWXerQkbp8SRSU4KJ8Fx/view?usp=sharing) and place it to the `MoDiTalker/data/data_utils/deep_3drecon/BFM` directory.
+Get the [`BFM_model_front.mat`](https://drive.google.com/file/d/1d08qauPUH0Nu_yN2gcmreLSiOiweD5OE/view?usp=sharing), [`similarity_Lm3D_all.mat`](https://drive.google.com/file/d/17zp_zuUYAuieCWXerQkbp8SRSU4KJ8Fx/view?usp=sharing) and [`Exp_Pca.bin`](https://drive.google.com/file/d/1SPeJ4jcJT9VS4IdA7opzyGHCYMKuCLRh/view?usp=sharing), and place them to the `MoDiTalker/data/data_utils/deep_3drecon/BFM` directory.
+Obtain ['BaselFaceModel.tgz](https://drive.google.com/file/d/1Kogpizrcf2zTm1fX9uUUWZuMQqHM7DOc/view?usp=sharing) and extract a file named `01_MorphableModel.mat` and place it to the `MoDiTalker/data/data_utils/deep_3drecon/BFM` directory.
 
 #### (Optional) 
 We had to revise a single code inside the package `accelerate` due to version conflicts. If some conflicts occur during loading data, please revise the code in `accelerate/dataloader.py` following this;
@@ -69,7 +70,7 @@ bash scripts/train.sh
 The checkpoints of AToM will be saved in `./runs`
 
 ### 3.2. MToV
-The checkpoints of MToV will be saved in `./runs`
+The checkpoints of AToM will be saved in `./runs`
 
 ### Autoencoder
 
@@ -78,7 +79,7 @@ First, execute the following script:
 cd MToV
 bash scripts/train/first_stg.sh 
 ```
-Then the script will automatically create the folder in `./runs` to save logs and checkpoints.
+Then the script will automatically create the folder in `./log_dir` to save logs and checkpoints.
 
 Second, execute the following script:
 ```bash
@@ -146,6 +147,7 @@ bash scripts/inference/sample.sh
 The final videos will be saved in `MToV/results`.
 
 
+
 ### Citation
 <!-- ```bibtex
 @inproceedings{yu2023video,
@@ -157,7 +159,5 @@ The final videos will be saved in `MToV/results`.
 ``` -->
 
 ### Reference
-<!-- 
 This code is mainly built upon [EDGE](https://github.com/Stanford-TML/EDGE) and [PVDM](https://github.com/sihyun-yu/PVDM/tree/main).\
 We also used the code from following repository: [GeneFace](https://github.com/yerfor/GeneFace).
--->
