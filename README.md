@@ -1,7 +1,7 @@
 # MoDiTalker
 
 Official PyTorch implementation of **["MoDiTalker: Motion-Disentangled Diffusion
-Model for High-Fidelity Talking Head Generation"]()**.   
+Model for High-Fidelity Talking Head Generation"](https://arxiv.org/abs/2403.19144)**.   
 <!-- [Seyeon Kim](https://sihyun.me/)<sup>*1</sup>, 
 [Siyoon Jin](https://sites.google.com/site/kihyuksml/)<sup>*1</sup>, 
 [Jihye Park](https://subin-kim-cv.github.io/)<sup>1</sup>, 
@@ -20,7 +20,7 @@ Seungryong Kim<sup>&dagger;1</sup>.
 <sup>&#8727;</sup> Equal contribution ,<sup>&dagger;</sup>Corresponding author
 <br>
 <sup>1</sup>Korea University, <sup>2</sup>VIVE STUDIO  
-[paper]() | [project page](https://ku-cvlab.github.io/MoDiTalker/)
+[paper](https://arxiv.org/abs/2403.19144) | [project page](https://ku-cvlab.github.io/MoDiTalker/)
 
 
 ## 1. Environment setup
@@ -149,14 +149,16 @@ The final videos will be saved in `MToV/results`.
 
 
 ### Citation
-<!-- ```bibtex
-@inproceedings{yu2023video,
-  title={Video Probabilistic Diffusion Models in Projected Latent Space},
-  author={Yu, Sihyun and Sohn, Kihyuk and Kim, Subin and Shin, Jinwoo},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  year={2023}
+```bibtex
+@misc{kim2024moditalker,
+      title={MoDiTalker: Motion-Disentangled Diffusion Model for High-Fidelity Talking Head Generation}, 
+      author={Seyeon Kim and Siyoon Jin and Jihye Park and Kihong Kim and Jiyoung Kim and Jisu Nam and Seungryong Kim},
+      year={2024},
+      eprint={2403.19144},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
-``` -->
+```
 
 ### Reference
 This code is mainly built upon [EDGE](https://github.com/Stanford-TML/EDGE) and [PVDM](https://github.com/sihyun-yu/PVDM/tree/main).\
