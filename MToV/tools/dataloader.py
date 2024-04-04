@@ -33,17 +33,12 @@ import einops
 
 import pdb
 
-<<<<<<< HEAD
 # -------------------------------------------------------------------------- #
 
 DATA_LOCATION = "path to your hdtf frames folder" # /data/HDTF/frames
 HDTF_KPT_LOCATION = "path to your hdtf kpts folder" # /data/HDTF/keypoints/non-face-centric/posed
 
 # -------------------------------------------------------------------------- #
-=======
-HDTF_DATA_LOCATION = "/media/data/HDTF_preprocessed/30_frame_re/HDTF"
-
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
 
 # load text file and readline
 def load_train_id_list(path):
@@ -219,11 +214,7 @@ class ImageFolderDataset(Dataset):
         land_vid = np.stack(
             [
                 self._load_np_from_path(
-<<<<<<< HEAD
                     folder=path[0].replace(DATA_LOCATION, HDTF_KPT_LOCATION),
-=======
-                    folder=path[0].replace("/HDTF/", "/pvdm/non-face-centric/posed/"),
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
                     fname=clip[i].replace("jpg", "npy")
                 )
                 for i in range(len(clip))
@@ -237,11 +228,7 @@ class ImageFolderDataset(Dataset):
                 self._crop_lower_half(
                     self._load_img_from_path(folder=path[0], fname=clip[i]),
                     self._load_np_from_path(
-<<<<<<< HEAD
                         folder=path[0].replace(DATA_LOCATION, HDTF_KPT_LOCATION),
-=======
-                        folder=path[0].replace("/HDTF/", "/pvdm/non-face-centric/posed/"),
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
                         fname=clip[i].replace("jpg", "npy"),
                     ),
                 )
@@ -294,19 +281,10 @@ def get_loaders(
     """
 
     if imgstr == "HDTF":
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         train_dir = DATA_LOCATION
         test_dir = DATA_LOCATION
-=======
-        train_dir = HDTF_DATA_LOCATION
-        test_dir = HDTF_DATA_LOCATION
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
-=======
-        train_dir = HDTF_DATA_LOCATION
-        test_dir = HDTF_DATA_LOCATION
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
-        
+
         
         trainset = ImageFolderDataset(train_dir, train=True, resolution=resolution, nframes=timesteps, cond=cond)
         print("len of trainset", len(trainset))
@@ -341,18 +319,4 @@ def get_loaders(
     )
 
     return trainloader, testloader, testloader
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
 
-
-def test():
-    train_dataset = ImageFolderDataset(HDTF_DATA_LOCATION, resolution=256, train=True, nframes=16)
-    test_dataset = ImageFolderDataset(HDTF_DATA_LOCATION, resolution=256, train=False, nframes=16)
-    first = train_dataset.__getitem__(0)
-<<<<<<< HEAD
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
-=======
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d

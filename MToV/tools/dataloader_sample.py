@@ -213,15 +213,7 @@ class EvalDataset(Dataset):
                 self._crop_lower_half(
                     self._load_img_from_path(folder=self.path[0], fname=clip[i]),
                     self._load_np_from_path(
-<<<<<<< HEAD
-<<<<<<< HEAD
                         folder=self.path[0].replace(DATA_LOCATION, HDTF_KPT_LOCATION),
-=======
-                        folder=self.path[0].replace("/HDTF/", "/pvdm/non-face-centric/posed/"),
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
-=======
-                        folder=self.path[0].replace("/HDTF/", "/pvdm/non-face-centric/posed/"),
->>>>>>> 0b794ceb5fdcf508ce955730a9aa9d5dd02dba8d
                         fname=clip[i].replace("jpg", "npy"),
                     ),
                 )
