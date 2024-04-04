@@ -98,13 +98,8 @@ bash scripts/train/second_stg.sh
 ### 4. Getting the Weights
 We provide the corresponding checkpoints in the below:
 Download and place them in the `./checkpoints/` directory. 
-Full checkpoints will be released later, ETA July 2024.
 
-|              | Link to download | 
-|--------------|-------------|
-| AToM     | [link](https://drive.google.com/file/d/1sedvX1zm1CkjQ0o-IUgkcEOvTv9Fe2NK/view?usp=sharing)  | 
-| MToV motion autoencoder | [link](https://drive.google.com/file/d/1S_4v1WJF_UMtrdqtWTEmMLMq0WsAyiCI/view?usp=sharing)  |
-| MToV RGB autoencoder | [link](https://drive.google.com/file/d/1MmFG1YL4pcapYCH0Q1NX7NNUQyxiK-PR/view?usp=sharing)  |
+Full checkpoints will be released later, ETA July 2024.
 
 ### 5. Inference
 #### 5.1. Generating Motions from Audio 
