@@ -64,9 +64,9 @@ def prepare_models(args):
     )
     diffusion = diffusion.to(device)
     diffusion.eval()
-    
+
     face3d_helper = Face3DHelper(args.face3d_helper)
-    
+
     return model, diffusion, face3d_helper
 
 
@@ -87,6 +87,8 @@ def save_lm_img(lm3D, out_path, WH=256, flip=True):
         pass
     cv2.imwrite(out_path, img)
 
+def wrap(x):
+    return {f"module.{key}": value for key, value in x.items()}
 
 def maybe_wrap(x, num):
     return x if num == 1 else wrap(x)
@@ -100,47 +102,44 @@ def load_idlist(path):
 
 def main(args):
     model, diffusion, face3d_helper = prepare_models(args)
-    if args.id_list is None : 
+    if args.id_list is None :
         id_list = os.listdir(os.path.join(args.data_root, "frames"))
     else:
         id_list = load_idlist(args.id_list)
-    
+
     for name in tqdm(id_list):
         for it in range(HORIZON // 156):
             STR = it * HORIZON
             END = (it + 1) * HORIZON
 
             if it == 0:
-                cond_keypoint = np.load(os.path.join(args.data_root, "keypoints/face-centric/unposed/{name}/00000.npy"))
-                # cond_keypoint = np.load(f"../data/inference/init_kpt/{name}.npy")
-                cond_keypoint = torch.from_numpy(cond_keypoint)
-                cond_keypoint = cond_keypoint[:, 0:1, :].to(device)
-            else : #TODO
-                cond_keypoint = np.load(f"") 
-            
+                cond_keypoint = np.load(os.path.join(args.data_root, f"keypoints/face-centric/unposed/{name}/00000.npy"))
+                cond_keypoint = torch.from_numpy(cond_keypoint).unsqueeze(0)
+                cond_keypoint = cond_keypoint[0:1, :].to(device)
+
             if cond_keypoint.shape[-1] == 3:
                 cond_keypoint = cond_keypoint.unsqueeze(0)
                 cond_keypoint = cond_keypoint.view(1, 1, -1)
-            
-            cond_keypoint = torch.cat([cond_keypoint for _ in range(HORIZON)], dim=1) 
+
+            cond_keypoint = torch.cat([cond_keypoint for _ in range(HORIZON)], dim=1)
             hubert_name = args.hubert_path
-            cond = np.load(hubert_name) 
+            cond = np.load(hubert_name)
             cond = torch.from_numpy(cond)
-            cond = cond.unsqueeze(0)  
-            cond = cond[:, STR : (it + 2 * HORIZON), :].to(device) 
+            cond = cond.unsqueeze(0)
+            cond = cond[:, STR : (it + 2 * HORIZON), :].to(device)
             print(cond.shape)
             shape = [1, HORIZON, repr_dim]
-            pos = torch.zeros(1, HORIZON, 3, device=device)
-            _ = torch.rand(1, HORIZON, repr_dim, device=device)
+            pos = torch.zeros(1, HORIZON, 7, device=device)
+            residual = torch.rand(1, HORIZON, repr_dim, device=device)
 
             with torch.no_grad():
                 atom_out = diffusion.render_sample(
                     face3d_helper,
                     shape,
                     cond_keypoint,
-                    _,
+                    residual,
                     pos,
-                    _,  
+                    residual,
                     cond,
                     0,
                     "",
