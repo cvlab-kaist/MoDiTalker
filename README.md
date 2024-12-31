@@ -9,18 +9,19 @@ Model for High-Fidelity Talking Head Generation"](https://arxiv.org/abs/2403.191
 [Jiyoung Kim]()<sup>1</sup>,
 [Jisu Nam]()<sup>1</sup> and
 [Seungryong Kim]()<sup>1</sup>. -->
-Seyeon Kim<sup>&#8727;1</sup>, 
+Seyeon Kim<sup>&#8727;1,2</sup>, 
 Siyoon Jin<sup>&#8727;1</sup>, 
-Jihye Park<sup>&#8727;1</sup>, 
-Kihong Kim<sup>2</sup>,
+Jihye Park<sup>&#8727;1,2</sup>, 
+Kihong Kim<sup>3</sup>,
 Jiyoung Kim<sup>1</sup>,
-Jisu Nam<sup>1</sup> and
-Seungryong Kim<sup>&dagger;1</sup>.
+Jisu Nam<sup>4</sup> and
+Seungryong Kim<sup>&dagger;4</sup>.
 <br>
 <sup>&#8727;</sup> Equal contribution ,<sup>&dagger;</sup>Corresponding author
 <br>
-<sup>1</sup>Korea University, <sup>2</sup>VIVE STUDIO  
-[paper](https://arxiv.org/abs/2403.19144) | [project page](https://ku-cvlab.github.io/MoDiTalker/)
+<sup>1</sup>Korea University, <sup>2</sup>Samsung Electronics, <sup>3</sup>VIVE STUDIOS, <sup>4</sup>KAIST
+
+[paper](https://arxiv.org/abs/2403.19144) | [project page](https://cvlab-kaist.github.io/MoDiTalker/)
 
 
 ## 1. Environment setup
@@ -98,8 +99,12 @@ bash scripts/train/second_stg.sh
 ### 4. Getting the Weights
 We provide the corresponding checkpoints in the below:
 Download and place them in the `./checkpoints/` directory. 
-
-Full checkpoints will be released later, ETA July 2024.
+|              | Link to download | 
+|--------------|-------------|
+| AToM     | [link](https://drive.google.com/file/d/1nxKqaScFIGuNoK5Y5Jq4zeWxJ55sUw_E/view?usp=share_link)  | 
+| MToV motion autoencoder | [link](https://drive.google.com/file/d/1b9s5TbCaj5hz-luw7abgLYOF2Ph3jKrv/view?usp=share_link)  |
+| MToV RGB autoencoder | [link](https://drive.google.com/file/d/1KQ7XKl5HLP79Ri7A33VHfn7Tvnwz3v9o/view?usp=share_link)  |
+<!-- Full checkpoints will be released later, ETA July 2024. -->
 
 ### 5. Inference
 #### 5.1. Generating Motions from Audio 
