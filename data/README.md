@@ -70,7 +70,7 @@ data
 ### Video 2 Frames
 Before you convert videos into frames, check all videos are at 25fps. 
 If not, they must be adjusted to: `data/data_utils/preprocess/unify_fps.py`
-Once preprocesing is complete and the videos are unitied at 25fps, you can convert them into frames using the following code.: `data/data_utils/preprocess/video2frame_hdtf.py`
+Once preprocessing is complete and the videos are unitied at 25fps, you can convert them into frames using the following code.: `data/data_utils/preprocess/video2frame_hdtf.py`
 
 ### Motion Extraction from frames, used in training MToV
 
